@@ -11,6 +11,18 @@ services:
       - ./data:/var/lib/postgresql/data 
     networks:
       - postgres-compose-network
+
+  teste-mongodb-compose:
+    image: mongo
+    # environment:
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: MongoDB2019!
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/renatogroffe/Desenvolvimento/Docker/Volumes/MongoDB:/data/db
+    networks:
+      - postgres-compose-network
       
   teste-pgadmin-compose:
     image: dpage/pgadmin4
