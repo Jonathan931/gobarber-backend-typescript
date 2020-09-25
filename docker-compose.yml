@@ -23,6 +23,13 @@ services:
       - /home/renatogroffe/Desenvolvimento/Docker/Volumes/MongoDB:/data/db
     networks:
       - postgres-compose-network
+
+  teste-redis-compose:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - postgres-compose-network
       
   teste-pgadmin-compose:
     image: dpage/pgadmin4
